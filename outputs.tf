@@ -1,3 +1,7 @@
+output "dev_center_projects_id" {
+  description = "Map of id values across all dev_center_projects, keyed the same as var.dev_center_projects"
+  value       = { for k, v in azurerm_dev_center_project.dev_center_projects : k => v.id }
+}
 output "dev_center_projects_description" {
   description = "Map of description values across all dev_center_projects, keyed the same as var.dev_center_projects"
   value       = { for k, v in azurerm_dev_center_project.dev_center_projects : k => v.description }
